@@ -1,0 +1,1 @@
+status_id = models.AutoField(primary_key=True)
