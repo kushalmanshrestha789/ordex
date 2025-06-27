@@ -1,0 +1,19 @@
+ordex_project/
+│
+├── order/                             # app folder
+│   ├── migrations/                    # includes files related to migrations
+│   │
+│   ├── templates/
+│   │   └── order/
+│   │       ├── base.html
+│   │       ├── order_form.html
+│   │       └── order_list.html
+│   │
+│   ├── models.py
+│   ├── forms.py
+│   ├── urls.py
+│   └── views.py
+│
+├── ordex_project/                     # project folder
+│   ├── settings.py
+│   └── urls.py

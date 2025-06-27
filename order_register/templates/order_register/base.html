@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ordex - Order Register</title>
+
+  <!-- Google Fonts - Inter for a modern look -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN for utility-first styling -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <style>
+    /* Custom CSS for the banner and general styling */
+    body {
+      font-family: 'Inter', sans-serif; /* Using Inter font for consistency */
+      background-color: #f0f2f5; /* Lighter background for a modern feel */
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh; /* Ensure page takes full viewport height */
+    }
+
+    /* Enhanced header banner styling - kept from previous iteration as it was good */
+    .ordex-header {
+      background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%); /* Vibrant gradient */
+      color: white;
+      padding: 3rem 1.5rem; /* Increased vertical padding */
+      text-align: center;
+      margin-bottom: 2.5rem; /* Slightly more space below banner */
+      border-radius: 0 0 25px 25px; /* More pronounced rounded bottom corners */
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35); /* Stronger shadow for depth */
+      position: relative;
+      overflow: hidden;
+      animation: fadeInDown 1s ease-out; /* Animation for a smooth entrance */
+    }
+
+    /* Keyframe animation for fade-in effect for the banner */
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .ordex-header h1 {
+      margin: 0;
+      font-size: 3.5rem; /* Even larger font size for main title */
+      font-weight: 700;
+      letter-spacing: 1.8px; /* Increased letter spacing */
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* More prominent text shadow */
+      line-height: 1.2;
+    }
+
+    .ordex-header p {
+      margin: 1rem 0 0 0;
+      font-size: 1.5rem; /* Larger font size for tagline */
+      font-weight: 300;
+      opacity: 0.98; /* Almost fully opaque */
+    }
+
+    /* Main content container styling */
+    .main-content-wrapper {
+      flex-grow: 1; /* Allows content to take up available space */
+      display: flex;
+      justify-content: center;
+      align-items: flex-start; /* Align to top, not center vertically */
+      padding: 0 1rem 2rem 1rem; /* Padding around the content */
+    }
+
+    .form-container {
+      background-color: #ffffff;
+      padding: 3rem; /* Generous padding inside the form card */
+      border-radius: 15px; /* Nicely rounded corners */
+      box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15); /* Soft, noticeable shadow */
+      max-width: 900px; /* Wider container for form elements */
+      width: 100%; /* Ensure it takes full width on smaller screens */
+      animation: fadeInUp 1s ease-out 0.5s forwards; /* Animation for smooth entrance */
+      opacity: 0; /* Hidden initially for animation */
+    }
+
+    /* Keyframe animation for fade-in-up effect for the form container */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Form group styling for spacing */
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    /* Input field styling */
+    .form-input {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      border: 1px solid #d1d5db; /* Light gray border */
+      border-radius: 0.5rem; /* Rounded input fields */
+      font-size: 1rem;
+      transition: all 0.2s ease-in-out;
+      box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.05); /* Inner shadow for depth */
+    }
+
+    .form-input:focus {
+      outline: none;
+      border-color: #6a11cb; /* Highlight color on focus */
+      box-shadow: 0 0 0 3px rgba(106, 17, 203, 0.2); /* Focus ring */
+    }
+
+    /* Label styling */
+    .form-label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 600; /* Slightly bolder labels */
+      color: #374151; /* Darker text for labels */
+      font-size: 0.95rem;
+    }
+
+    /* Button styling */
+    .btn-primary-custom {
+      background-color: #2575fc; /* Primary button color from gradient */
+      color: white;
+      font-weight: 600;
+      padding: 0.8rem 2rem;
+      border-radius: 0.75rem; /* More rounded buttons */
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .btn-primary-custom:hover {
+      background-color: #1a5edb; /* Darker shade on hover */
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .btn-secondary-custom {
+      background-color: #6c757d; /* Secondary button color */
+      color: white;
+      font-weight: 500;
+      padding: 0.8rem 2rem;
+      border-radius: 0.75rem;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    }
+
+    .btn-secondary-custom:hover {
+      background-color: #5a6268;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+    }
+
+    /* Icon spacing for buttons */
+    .btn-secondary-custom i {
+      margin-right: 0.75rem;
+    }
+
+    /* Footer styling */
+    .footer {
+      background-color: #333;
+      color: #ccc;
+      text-align: center;
+      padding: 1.5rem;
+      margin-top: 2rem; /* Space above footer */
+      font-size: 0.9rem;
+      border-top: 1px solid #444;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .ordex-header {
+        padding: 2.5rem 1rem;
+        margin-bottom: 2rem;
+        border-radius: 0 0 20px 20px;
+      }
+      .ordex-header h1 {
+        font-size: 2.8rem;
+        letter-spacing: 1.5px;
+      }
+      .ordex-header p {
+        font-size: 1.2rem;
+        margin-top: 0.8rem;
+      }
+      .form-container {
+        padding: 2rem;
+        border-radius: 12px;
+      }
+      .form-group {
+        margin-bottom: 1.2rem;
+      }
+      .form-input {
+        padding: 0.6rem 0.8rem;
+        font-size: 0.95rem;
+      }
+      .form-label {
+        font-size: 0.9rem;
+      }
+      .btn-primary-custom, .btn-secondary-custom {
+        padding: 0.7rem 1.5rem;
+        font-size: 0.95rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .ordex-header {
+        padding: 2rem 0.8rem;
+        margin-bottom: 1.5rem;
+        border-radius: 0 0 15px 15px;
+      }
+      .ordex-header h1 {
+        font-size: 2.2rem;
+        letter-spacing: 1px;
+      }
+      .ordex-header p {
+        font-size: 1rem;
+        margin-top: 0.6rem;
+      }
+      .form-container {
+        padding: 1.5rem;
+        border-radius: 10px;
+      }
+      .form-group {
+        margin-bottom: 1rem;
+      }
+      .form-input {
+        padding: 0.5rem 0.7rem;
+        font-size: 0.9rem;
+      }
+      .form-label {
+        font-size: 0.85rem;
+      }
+      .btn-primary-custom, .btn-secondary-custom {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.85rem;
+      }
+      .btn-secondary-custom i {
+        margin-right: 0.5rem;
+      }
+    }
+  </style>
+</head>
+
+<body class="flex flex-col min-h-screen">
+  <!-- Header Banner -->
+  <header class="ordex-header">
+    <h1>Ordex - Order Tracking System</h1>
+    <p>Your one-stop solution to track orders efficiently</p>
+  </header>
+
+  <!-- Main Content Wrapper -->
+  <main class="main-content-wrapper">
+    <div class="form-container">
+      <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center">Register New Order</h2>
+
+       {% block content %}
+      {% endblock content %}
+
+      <!-- <form>
+      
+        <div class="form-group">
+          <label for="customerName" class="form-label">Customer Name<span class="text-red-500">*</span></label>
+          <input type="text" id="customerName" name="customerName" class="form-input" placeholder="Enter customer name" required>
+        </div>
+
+     
+        <div class="form-group">
+          <label for="productName" class="form-label">Product Name<span class="text-red-500">*</span></label>
+          <input type="text" id="productName" name="productName" class="form-input" placeholder="Enter product name" required>
+        </div>
+
+     
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+          <div class="form-group md:mb-0">
+            <label for="quantity" class="form-label">Quantity<span class="text-red-500">*</span></label>
+            <input type="number" id="quantity" name="quantity" class="form-input" placeholder="Enter quantity" min="1" required>
+          </div>
+          <div class="form-group md:mb-0">
+            <label for="orderStatus" class="form-label">Order Status<span class="text-red-500">*</span></label>
+            <select id="orderStatus" name="orderStatus" class="form-input" required>
+              <option value="" disabled selected>Select status</option>
+              <option value="pending">Pending</option>
+              <option value="processing">Processing</option>
+              <option value="shipped">Shipped</option>
+              <option value="delivered">Delivered</option>
+              <option value="cancelled">Cancelled</option>
+            </select>
+          </div>
+        </div>
+
+       
+        <div class="flex flex-col sm:flex-row justify-center gap-4 mt-8">
+          <button type="submit" class="btn-primary-custom flex items-center justify-center">
+            <i class="fas fa-check-circle mr-2"></i> Submit Order
+          </button>
+          <a href="#" class="btn-secondary-custom flex items-center justify-center">
+            <i class="fas fa-list-alt mr-2"></i> Back to List
+          </a>
+        </div>
+      </form> -->
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2025 Ordex. All rights reserved.</p>
+  </footer>
+
+  <!-- Bootstrap JS (Popper and Bootstrap bundles) - still included if other Bootstrap components are used elsewhere -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.min.js" crossorigin="anonymous"></script>
+</body>
+</html>
