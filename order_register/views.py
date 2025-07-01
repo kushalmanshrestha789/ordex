@@ -4,6 +4,11 @@ from .forms import OrderForm
 from .models import Order
 
 
+
+def home(request):
+    return render(request, 'order_register/home.html',{'title': 'Home'})
+
+
 def order_list(request):
     orders = Order.objects.all()
     return render(request, 'order_register/order_list.html', {'order_list': orders})

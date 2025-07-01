@@ -18,6 +18,7 @@ from django.contrib import admin
 from django.urls import path,include
 
 urlpatterns = [
+    path('', include('order_register.urls')),  # Include the order_register app URLs
     path('admin/', admin.site.urls),
     path('orders/', include('order_register.urls'))
 ]
