@@ -15,6 +15,7 @@ def order_list(request):
 
 
 def order_form(request, order_id=0):
+    context = {'form': Order()}
     if request.method == "GET":
         if order_id == 0:
             form = OrderForm()

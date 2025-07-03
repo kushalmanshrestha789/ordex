@@ -45,7 +45,10 @@ INSTALLED_APPS = [
     
 ]
 
-CRISPY_TEMPLATE_PACK = 'bootstrap4'
+# CRISPY_TEMPLATE_PACK = 'bootstrap4' # bootstrap version for basic styling
+# tailwind version for advanced styling
+CRISPY_ALLOWED_TEMPLATE_PACKS = "tailwind" 
+CRISPY_TEMPLATE_PACK = "tailwind"
 
 
 MIDDLEWARE = [
