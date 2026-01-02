@@ -37,11 +37,14 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'django.contrib.staticfiles',
+    'django.contrib.staticfiles', 
     'order_register',
     'crispy_forms',
     'crispy_tailwind',
     'crispy_bootstrap4',
+    'members',
+    'rest_framework',
+     
     
 ]
 
@@ -132,9 +135,10 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
-STATIC_URL = '/static/'
+STATIC_URL = 'static/'
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'order_register/static'),
+    BASE_DIR / "static"
+
 ]
 
 # Default primary key field type

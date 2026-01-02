@@ -3,8 +3,6 @@ from django.contrib import messages
 from .forms import OrderForm
 from .models import Order
 
-
-
 def home(request):
     return render(request, 'order_register/home.html',{'title': 'Home'})
 

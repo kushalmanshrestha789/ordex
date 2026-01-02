@@ -12,10 +12,10 @@
 
     /* Enhanced header banner styling - kept from previous iteration as it was good */
     .ordex-header {
-      background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%); /* Vibrant gradient */
+      
       color: white;
       padding: 3rem 1.5rem; /* Increased vertical padding */
-      text-align: center;
+      text-align:justify;
       margin-bottom: 2.5rem; /* Slightly more space below banner */
       border-radius: 0 0 25px 25px; /* More pronounced rounded bottom corners */
       box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35); /* Stronger shadow for depth */
@@ -66,7 +66,7 @@
       padding: 3rem; /* Generous padding inside the form card */
       border-radius: 15px; /* Nicely rounded corners */
       box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15); /* Soft, noticeable shadow */
-      max-width: 900px; /* Wider container for form elements */
+      max-width: 625rem; /* Wider container for form elements */
       width: 100%; /* Ensure it takes full width on smaller screens */
       animation: fadeInUp 1s ease-out 0.5s forwards; /* Animation for smooth entrance */
       opacity: 0; /* Hidden initially for animation */
@@ -215,7 +215,7 @@
       }
       .form-container {
         padding: 1.5rem;
-        border-radius: 10px;
+        border-radius: 50px;
       }
       .form-group {
         margin-bottom: 1rem;

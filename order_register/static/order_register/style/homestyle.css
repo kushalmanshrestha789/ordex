@@ -37,7 +37,7 @@ body {
 /* App Icon Link */
 .app-icon-link {
     display: flex;
-    align-items: center;
+    align-items: left;
     gap: 0.5rem; /* space-x-2 */
     color: #1a202c; /* text-gray-900 */
     transition-property: color;
