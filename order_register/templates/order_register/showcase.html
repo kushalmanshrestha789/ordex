@@ -1,0 +1,97 @@
+{% extends "order_register/base.html" %}
+{% load crispy_forms_tags %}
+{% load tailwind_filters %}
+
+{% block content %}
+<div class="tabs-container">
+    <div class="tab active" onclick="openTab(event, 'Products')">Products</div>
+    <div class="tab" onclick="open(event, 'Services')">Services</div>
+</div>
+
+<div id="Products" class="tab-content-container">
+    <div class="card">
+        <img src="https://via.placeholder.com/300" alt="Product 1">
+        <div class="card-content">
+            <h3>Product 1</h3>
+            <p>Description</p>
+        </div>
+        <button>Add to cart</button>
+    </div>
+
+    <div class="card">
+    <img src="https://via.placeholder.com/300" alt="Product 2">
+    <div class="card-content">
+        <h3>Product 2</h3>
+        <p>Description</p>
+    </div>
+    <button>Add to cart</button>     
+    </div>
+    
+    <div class="card">
+        <img src="https://via.placeholder.com/300" alt="Product 2">
+        <div class="card-content">
+        <h3>Product 2</h3>
+        <p>Description</p>
+        </div>
+     <button>Add to cart</button> 
+    </div>
+
+       <div class="card">
+        <img src="https://via.placeholder.com/300" alt="Product 2">
+        <div class="card-content">
+        <h3>Product 2</h3>
+        <p>Description</p>
+        </div>
+     <button>Add to cart</button> 
+    </div>
+    
+     <div id="Services" class="tab-content-container">
+    <div class="card">
+      <img src="https://via.placeholder.com/300" alt="Service 1">
+      <div class="card-content">
+        <h3>Service 1</h3>
+        <p>Description of Service 1</p>
+      </div>
+      <button>Book Now</button>
+    </div>
+
+    <div class="card">
+      <img src="https://via.placeholder.com/300" alt="Service 2">
+      <div class="card-content">
+        <h3>Service 2</h3>
+        <p>Description of Service 2</p>
+      </div>
+      <button>Book Now</button>
+    </div>
+
+    <div class="card">
+      <img src="https://via.placeholder.com/300" alt="Service 3">
+      <div class="card-content">
+        <h3>Service 3</h3>
+        <p>Description of Service 3</p>
+      </div>
+      <button>Book Now</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  function openTab(evt, tabName){
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementByClassName("tab-content-container");
+  for(i = 0; i < tabcontent.length;i++){
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = documents.getElementsByClassName("tab");
+  for(i = 0;i < tablinks.length; i++){
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  documents.getElementsById(tabName).style.display = "Flex";
+  evt.currentTarget.className += " active";
+  }
+
+
+</script>
+
+
+{% endblock content %}

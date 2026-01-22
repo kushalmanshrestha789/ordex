@@ -1,237 +1,300 @@
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #f0f2f5;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
 
-    /* Custom CSS for the banner and general styling */
-    body {
-      font-family: 'Inter', sans-serif; /* Using Inter font for consistency */
-      background-color: #f0f2f5; /* Lighter background for a modern feel */
-      margin: 0;
-      padding: 0;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh; /* Ensure page takes full viewport height */
-    }
+.ordex-header {
+  color: white;
+  padding: 3rem 1.5rem;
+  text-align: justify;
+  margin-bottom: 2.5rem;
+  border-radius: 0 0 25px 25px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35);
+  position: relative;
+  overflow: hidden;
+  animation: fadeInDown 1s ease-out;
+}
 
-    /* Enhanced header banner styling - kept from previous iteration as it was good */
-    .ordex-header {
-      
-      color: white;
-      padding: 3rem 1.5rem; /* Increased vertical padding */
-      text-align:justify;
-      margin-bottom: 2.5rem; /* Slightly more space below banner */
-      border-radius: 0 0 25px 25px; /* More pronounced rounded bottom corners */
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35); /* Stronger shadow for depth */
-      position: relative;
-      overflow: hidden;
-      animation: fadeInDown 1s ease-out; /* Animation for a smooth entrance */
-    }
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
-    /* Keyframe animation for fade-in effect for the banner */
-    @keyframes fadeInDown {
-      from {
-        opacity: 0;
-        transform: translateY(-30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
+.ordex-header h1 {
+  margin: 0;
+  font-size: 3.5rem;
+  font-weight: 700;
+  letter-spacing: 1.8px;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  line-height: 1.2;
+}
 
-    .ordex-header h1 {
-      margin: 0;
-      font-size: 3.5rem; /* Even larger font size for main title */
-      font-weight: 700;
-      letter-spacing: 1.8px; /* Increased letter spacing */
-      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* More prominent text shadow */
-      line-height: 1.2;
-    }
+.ordex-header p {
+  margin: 1rem 0 0 0;
+  font-size: 1.5rem;
+  font-weight: 300;
+  opacity: 0.98;
+}
 
-    .ordex-header p {
-      margin: 1rem 0 0 0;
-      font-size: 1.5rem; /* Larger font size for tagline */
-      font-weight: 300;
-      opacity: 0.98; /* Almost fully opaque */
-    }
+/* .main-content-wrapper {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0 1rem 2rem 1rem;
+} */
 
-    /* Main content container styling */
-    .main-content-wrapper {
-      flex-grow: 1; /* Allows content to take up available space */
-      display: flex;
-      justify-content: center;
-      align-items: flex-start; /* Align to top, not center vertically */
-      padding: 0 1rem 2rem 1rem; /* Padding around the content */
-    }
+.form-container  {
+  background-color: #ffffff;
+  padding: 10rem;
+  border-radius: 16px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15);
+  max-width: 290rem;
+  width: 80%;
+  animation: fadeInUp 1s ease-out 0.5s forwards;
+  opacity: 0;
+}
+.order_list_container{
+  background-color: #ffffff;
+  padding: 5rem;
+  border-radius: 16px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15);
+  max-width: 290rem;
+  width:80%;
+  animation: fadeInUp 1s ease-out 0.5s forwards;
+  opacity: 0;
+}
+.container_order_form{
+  background-color: #ffffff;
+  padding: 3rem;
+  border-radius: 16px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15);
+  max-width: 290rem;
+  width: 39%;
+  animation: fadeInUp 1s ease-out 0.5s forwards;
+  opacity: 0;
+}
 
-    .form-container {
-      background-color: #ffffff;
-      padding: 3rem; /* Generous padding inside the form card */
-      border-radius: 15px; /* Nicely rounded corners */
-      box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15); /* Soft, noticeable shadow */
-      max-width: 625rem; /* Wider container for form elements */
-      width: 100%; /* Ensure it takes full width on smaller screens */
-      animation: fadeInUp 1s ease-out 0.5s forwards; /* Animation for smooth entrance */
-      opacity: 0; /* Hidden initially for animation */
-    }
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
-    /* Keyframe animation for fade-in-up effect for the form container */
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
+.form-group {
+  margin-bottom: 1.5rem;
+}
 
-    /* Form group styling for spacing */
-    .form-group {
-      margin-bottom: 1.5rem;
-    }
+.form-input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  transition: all 0.2s ease-in-out;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.05);
+}
 
-    /* Input field styling */
-    .form-input {
-      width: 100%;
-      padding: 0.75rem 1rem;
-      border: 1px solid #d1d5db; /* Light gray border */
-      border-radius: 0.5rem; /* Rounded input fields */
-      font-size: 1rem;
-      transition: all 0.2s ease-in-out;
-      box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.05); /* Inner shadow for depth */
-    }
+.form-input:focus {
+  outline: none;
+  border-color: #6a11cb;
+  box-shadow: 0 0 0 3px rgba(106, 17, 203, 0.2);
+}
 
-    .form-input:focus {
-      outline: none;
-      border-color: #6a11cb; /* Highlight color on focus */
-      box-shadow: 0 0 0 3px rgba(106, 17, 203, 0.2); /* Focus ring */
-    }
+.form-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #374151;
+  font-size: 0.95rem;
+}
 
-    /* Label styling */
-    .form-label {
-      display: block;
-      margin-bottom: 0.5rem;
-      font-weight: 600; /* Slightly bolder labels */
-      color: #374151; /* Darker text for labels */
-      font-size: 0.95rem;
-    }
+.btn-primary-custom {
+  background-color: #2575fc;
+  color: white;
+  font-weight: 600;
+  padding: 0.8rem 2rem;
+  border-radius: 0.75rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
 
-    /* Button styling */
-    .btn-primary-custom {
-      background-color: #2575fc; /* Primary button color from gradient */
-      color: white;
-      font-weight: 600;
-      padding: 0.8rem 2rem;
-      border-radius: 0.75rem; /* More rounded buttons */
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    }
+.btn-primary-custom:hover {
+  background-color: #1a5edb;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
 
-    .btn-primary-custom:hover {
-      background-color: #1a5edb; /* Darker shade on hover */
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
-    }
+.btn-secondary-custom {
+  background-color: #6c757d;
+  color: white;
+  font-weight: 500;
+  padding: 0.8rem 2rem;
+  border-radius: 0.75rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
 
-    .btn-secondary-custom {
-      background-color: #6c757d; /* Secondary button color */
-      color: white;
-      font-weight: 500;
-      padding: 0.8rem 2rem;
-      border-radius: 0.75rem;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-    }
+.btn-secondary-custom:hover {
+  background-color: #5a6268;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+}
 
-    .btn-secondary-custom:hover {
-      background-color: #5a6268;
-      transform: translateY(-2px);
-      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
-    }
+.btn-secondary-custom i {
+  margin-right: 0.75rem;
+}
 
-    /* Icon spacing for buttons */
-    .btn-secondary-custom i {
-      margin-right: 0.75rem;
-    }
+.footer {
+  background-color: #333;
+  color: #ccc;
+  text-align: center;
+  padding: 1.5rem;
+  margin-top: 2rem;
+  font-size: 0.9rem;
+  border-top: 1px solid #444;
+}
 
-    /* Footer styling */
-    .footer {
-      background-color: #333;
-      color: #ccc;
-      text-align: center;
-      padding: 1.5rem;
-      margin-top: 2rem; /* Space above footer */
-      font-size: 0.9rem;
-      border-top: 1px solid #444;
-    }
+@media (max-width: 768px) {
+  .ordex-header {
+    padding: 2.5rem 1rem;
+    margin-bottom: 2rem;
+    border-radius: 0 0 20px 20px;
+  }
+  .ordex-header h1 {
+    font-size: 2.8rem;
+    letter-spacing: 1.5px;
+  }
+  .ordex-header p {
+    font-size: 1.2rem;
+    margin-top: 0.8rem;
+  }
+  .form-container {
+    padding: 2rem;
+    border-radius: 12px;
+  }
+  .form-group {
+    margin-bottom: 1.2rem;
+  }
+  .form-input {
+    padding: 0.6rem 0.8rem;
+    font-size: 0.95rem;
+  }
+  .form-label {
+    font-size: 0.9rem;
+  }
+  .btn-primary-custom, .btn-secondary-custom {
+    padding: 0.7rem 1.5rem;
+    font-size: 0.95rem;
+  }
+}
 
-    /* Responsive adjustments */
-    @media (max-width: 768px) {
-      .ordex-header {
-        padding: 2.5rem 1rem;
-        margin-bottom: 2rem;
-        border-radius: 0 0 20px 20px;
-      }
-      .ordex-header h1 {
-        font-size: 2.8rem;
-        letter-spacing: 1.5px;
-      }
-      .ordex-header p {
-        font-size: 1.2rem;
-        margin-top: 0.8rem;
-      }
-      .form-container {
-        padding: 2rem;
-        border-radius: 12px;
-      }
-      .form-group {
-        margin-bottom: 1.2rem;
-      }
-      .form-input {
-        padding: 0.6rem 0.8rem;
-        font-size: 0.95rem;
-      }
-      .form-label {
-        font-size: 0.9rem;
-      }
-      .btn-primary-custom, .btn-secondary-custom {
-        padding: 0.7rem 1.5rem;
-        font-size: 0.95rem;
-      }
-    }
+@media (max-width: 480px) {
+  .ordex-header {
+    padding: 2rem 0.8rem;
+    margin-bottom: 1.5rem;
+    border-radius: 0 0 15px 15px;
+  }
+  .ordex-header h1 {
+    font-size: 2.2rem;
+    letter-spacing: 1px;
+  }
+  .ordex-header p {
+    font-size: 1rem;
+    margin-top: 0.6rem;
+  }
+  .form-container {
+    padding: 1.5rem;
+    border-radius: 50px;
+  }
+  .form-group {
+    margin-bottom: 1rem;
+  }
+  .form-input {
+    padding: 0.5rem 0.7rem;
+    font-size: 0.9rem;
+  }
+  .form-label {
+    font-size: 0.85rem;
+  }
+  .btn-primary-custom, .btn-secondary-custom {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.85rem;
+  }
+  .btn-secondary-custom i {
+    margin-right: 0.5rem;
+  }
+}
 
-    @media (max-width: 480px) {
-      .ordex-header {
-        padding: 2rem 0.8rem;
-        margin-bottom: 1.5rem;
-        border-radius: 0 0 15px 15px;
-      }
-      .ordex-header h1 {
-        font-size: 2.2rem;
-        letter-spacing: 1px;
-      }
-      .ordex-header p {
-        font-size: 1rem;
-        margin-top: 0.6rem;
-      }
-      .form-container {
-        padding: 1.5rem;
-        border-radius: 50px;
-      }
-      .form-group {
-        margin-bottom: 1rem;
-      }
-      .form-input {
-        padding: 0.5rem 0.7rem;
-        font-size: 0.9rem;
-      }
-      .form-label {
-        font-size: 0.85rem;
-      }
-      .btn-primary-custom, .btn-secondary-custom {
-        padding: 0.6rem 1.2rem;
-        font-size: 0.85rem;
-      }
-      .btn-secondary-custom i {
-        margin-right: 0.5rem;
-      }
-    }
+/* For cards */
+.tab-container{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+.tab{
+  padding: 1rem;
+  cursor: pointer;
+  background-color: #F2f2f2;
+  border: none;
+  border-radius:4px;
+  transition: background-color 0.3s ease;
+}
+.tab.active{
+ background-color: #182b40;
+ color: whitesmokes;
+}
+.tab-content-container{
+  display: flex;
+  justify-content: space-around;
+}
+.card{
+  width: calc(33.33% - 2rem);
+  margin: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+.card img{
+  width: 100%;
+  display:block;
+}
+.card-content{
+  padding: 1rem;
+}
+.card h3{
+  margin: 0;
+  font-size: 1.5rem;
+}
+.card p{
+  font-size: 1.2rem;
+  color:#666;
+}
+button{
+  margin-top: 1.5rem;
+  padding: 0.75rem;
+  background-color: #182b40;
+  color:white;
+  border:none;
+  border-radius: 4px;
+  cursor:pointer;
+}
+button:hover{
+  background-color: #0056b3;
+}

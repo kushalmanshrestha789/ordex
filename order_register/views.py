@@ -6,6 +6,8 @@ from .models import Order
 def home(request):
     return render(request, 'order_register/home.html',{'title': 'Home'})
 
+def  showcase(request):
+    return render(request, 'order_register/showcase.html',{'title' : 'Showcase'})
 
 def order_list(request):
     orders = Order.objects.all()
@@ -44,3 +46,4 @@ def order_delete(request, order_id):
     order.delete()
     messages.success(request, 'Order deleted successfully!')
     return redirect('order_list')
+

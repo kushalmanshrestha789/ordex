@@ -49,7 +49,7 @@
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 13h6m-3-3v6m5 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
                 <span>New Order</span>
             </a>
-            <a href="#" class="dashboard-nav-item text-purple-600">
+            <a href="{% url 'showcase' %}" class="dashboard-nav-item text-purple-600">
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4"></path></svg>
                 <span>Status</span>
             </a>
@@ -74,7 +74,7 @@
 
   <!-- Main Content Wrapper -->
   <main class="main-content-wrapper">
-    <div class="form-container">
+   
       <!-- <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center">Register New Order</h2> -->
 
       {% block content %}
@@ -82,9 +82,9 @@
 
 
   <!-- Footer -->
-  <!--<footer class="footer">
-    <p>&copy; 2025 Ordex. All rights reserved.</p>
-  </footer>-->
+  <!-- <footer class="footer">
+    <p>&copy; 2026 Ordex. All rights reserved.</p>
+  </footer> -->
 
   <!-- Bootstrap JS (Popper and Bootstrap bundles) - still included if other Bootstrap components are used elsewhere -->
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" crossorigin="anonymous"></script>

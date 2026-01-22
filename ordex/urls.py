@@ -20,7 +20,6 @@ from  django.views.generic.base import TemplateView
 
 
 urlpatterns = [
-    path('', include('order_register.urls')),  # Include the order_register app URLs
     path('admin/', admin.site.urls),
     path('orders/', include('order_register.urls')),
     path('',TemplateView.as_view(template_name="home.html"), name="home"), 

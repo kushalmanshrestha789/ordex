@@ -17,21 +17,21 @@ def login_page(request):
          messages.error(request,'Invalid Username')
          return redirect('/login/') #might needed changing
     
-        user =  authenticate(user-username, password=password)
+        user =  authenticate(username=username, password=password)
 
         if user is None:
         #Display and error message if authentication fails (invalid password)
           messages.error(request, "Invalid Password")
-          return redirect('login')
+          return redirect('login_page')
         else:
             login(request, user)
-            return redirect('/home/')
+            return redirect('home')
         
     return render(request, 'login.html')
 
 #View function for registration page
 def register_page(request):
-   if request.method == 'Post' :
+   if request.method == 'POST' :
       first_name =  request.POST.get('first_name')
       last_name = request.POST.get('last_name')
       username = request.POST.get('username')
@@ -42,7 +42,7 @@ def register_page(request):
 
       if user.exists():
          messages.info(request, "Username already taken")
-         return('/register/')
+         return redirect('register_page')
       
       user = User.objects.create_user(
          first_name = first_name,
@@ -53,7 +53,7 @@ def register_page(request):
       user.save()
 
       messages.info(request, "Account created Sucessfully")
-      return redirect('/register/')
+      return redirect('register_page')
    
    return render(request, 'register.html')
 

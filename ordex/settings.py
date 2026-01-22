@@ -94,7 +94,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'OrderDB',
         'USER':'postgres',
-        'PASSWORD' : 'CLFA569138',
+        'PASSWORD' : 'ORDEX569138',
         'HOST': 'localhost',
         'PORT': '5432',
         'DISABLE_SERVER_SIDE_CURSORS': True,
