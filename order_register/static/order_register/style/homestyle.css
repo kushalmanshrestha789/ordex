@@ -177,7 +177,8 @@ body {
 
 @media (min-width: 1024px) { /* lg breakpoint */
     .main-content-wrapper {
-    
+        padding-left: 2rem; /* sm:px-6 */
+        padding-right: 2rem; /* sm:px-6 */
     }
 }
 
